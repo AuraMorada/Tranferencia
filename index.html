@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Datos para transferencia</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.card {
+    background: white;
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+h1 {
+    color: #333;
+}
+
+.cuenta {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 25px 0;
+}
+
+button {
+    width: 100%;
+    padding: 18px;
+    border: none;
+    border-radius: 12px;
+    background: #6d28d9;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:active {
+    background: #4c1d95;
+}
+
+#mensaje {
+    color: green;
+    margin-top: 15px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Transferencia bancaria</h1>
+
+<p>Banco: Nu</p>
+
+<p>Beneficiario</p>
+<strong>Kassandra Tello</strong>
+
+<div class="cuenta" id="cuenta">
+5101254664385492
+</div>
+
+<button onclick="copiarCuenta()">
+📋 Copiar cuenta
+</button>
+
+<p id="mensaje"></p>
+
+</div>
+
+<script>
+
+function copiarCuenta() {
+
+    const cuenta = document.getElementById("cuenta").innerText;
+
+    navigator.clipboard.writeText(cuenta);
+
+    document.getElementById("mensaje").innerText =
+    "✓ Cuenta copiada";
+
+}
+
+</script>
+
+</body>
